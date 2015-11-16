@@ -1,5 +1,5 @@
 # QtSkeleton
 
 Qt project skeleton using CMake, resource files, UI files & main
-window icon. Icon made by [Enrique Alonso Ramírez
+window icon. Icon made by [Enrique Alonso RamÃ­rez
 Tejeda](http://dtafalonso.deviantart.com/).

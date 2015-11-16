@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 2.8)
 
 project(QtSkeleton)
 
@@ -22,14 +22,19 @@ cmake_policy(SET CMP0020 NEW) # Link to qtmain automatically
 
 set(CMAKE_AUTOMOC ON) # Automatically MOC source files
 
-set(CMAKE_AUTOUIC ON) # Automatically UIC .ui files (CMake3+ only)
+if(NOT CMAKEVERSION VERSION_LESS 3.0)
+  set(CMAKE_AUTOUIC ON) # Automatically UIC .ui files (CMake3+ only)
+endif()
 
 find_package(Qt5Core)
 find_package(Qt5Widgets)
 find_package(Qt5Gui)
 
-# qt5_wrap_ui(ui_files MainWindow.ui) # CMake2.8
-set(ui_files MainWindow.ui) # CMake3+ only
+if(CMAKE_VERSION VERSION_LESS 3.0)
+  qt5_wrap_ui(ui_files MainWindow.ui) # CMake2.8
+else()
+  set(ui_files MainWindow.ui) # CMake3+ only
+endif()
 
 qt5_add_resources(qrc_files QtSkeleton.qrc)
 

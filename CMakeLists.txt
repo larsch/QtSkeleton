@@ -22,7 +22,7 @@ cmake_policy(SET CMP0020 NEW) # Link to qtmain automatically
 
 set(CMAKE_AUTOMOC ON) # Automatically MOC source files
 
-if(NOT CMAKEVERSION VERSION_LESS 3.0)
+if(NOT CMAKE_VERSION VERSION_LESS 3.0)
   set(CMAKE_AUTOUIC ON) # Automatically UIC .ui files (CMake3+ only)
 endif()
 
